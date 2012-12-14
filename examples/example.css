@@ -1,0 +1,24 @@
+#content {
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.some_container {
+  padding: 5px 0px 0px;
+  border-bottom: 3px solid blue;
+}
+.another_container {
+  padding-left: 20px;
+  border-left: 2px solid red;
+  margin: 10px 0px;
+}
+.some_container div {
+  width: 200px;
+  height: 50px;
+  margin-bottom: 10px;
+  background-color: #ddd;
+  border: 1px solid #000;
+}
+.some_container div.highlight {
+  background-color: red;
+}
