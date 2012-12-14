@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Jquery-traverse by adelegard</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Jquery-traverse</h1>
+        <p>The jquery-traverse plugin will give you a flexible way to traverse through containers and their child elements with either keyboard commands or custom events.</p>
+
+        <p class="view"><a href="https://github.com/adelegard/jquery-traverse">View the Project on GitHub <small>adelegard/jquery-traverse</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/adelegard/jquery-traverse/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/adelegard/jquery-traverse/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/adelegard/jquery-traverse">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>jquery-traverse</h1>
+
+<p>The jquery-traverse plugin will give you a flexible way to traverse through containers and their child elements with either keyboard commands or custom events.</p>
+
+<h2>Requirements</h2>
+
+<ul>
+<li>jQuery 1.4.2+</li>
+</ul><h2>Installation</h2>
+
+<p>Add the following to your HTML head:</p>
+
+<div class="highlight"><pre>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.traverse.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<h2>Usage</h2>
+
+<div class="highlight"><pre>    <span class="nx">$</span><span class="p">(</span><span class="s1">'.some_table'</span><span class="p">).</span><span class="nx">traverse</span><span class="p">(</span><span class="s1">'tr'</span><span class="p">);</span>
+</pre></div>
+
+<h2>Options</h2>
+
+<table border="1" cellspacing="0" cellpadding="3">
+<tr>
+<th align="center" valign="middle">
+      Option Name
+    </th>
+    <th align="center" valign="middle">
+      Default
+    </th>
+    <th align="center" valign="middle">
+      Purpose
+    </th>
+  </tr>
+<tr>
+<td><em>jump_between</em></td>
+    <td><em>true</em></td>
+    <td>whether or not traversal should be made between parent containers</td>
+  </tr>
+<tr>
+<td><em>loop</em></td>
+    <td><em>true</em></td>
+    <td>whether or not traversal should loop around to the beginning/end of the traversal elements</td>
+  </tr>
+<tr>
+<td><em>skip_selector</em></td>
+    <td><em></em></td>
+    <td>the selector(s) to skip over during traversal</td>
+  </tr>
+<tr>
+<td><em>move_scrollbar</em></td>
+    <td><em>true</em></td>
+    <td>whether or not the scrollbar should be moved to keep the highlighted element visible</td>
+  </tr>
+<tr>
+<td><em>highlight_class</em></td>
+    <td><em>"highlight"</em></td>
+    <td>the class to be added to each traversal element</td>
+  </tr>
+<tr>
+<td><em>action_window_location_href<br></em></td>
+    <td><em>true<br></em></td>
+    <td>whether or not the first anchor found in the highlighted element on the action event should be used to navigate the browser to that href</td>
+  </tr>
+<tr>
+<td><em>action_selector</em></td>
+    <td><em>' &gt; td &gt; a'</em></td>
+    <td>the selector to be used if action_window_location_href is true to navigate the page on the action event</td>
+  </tr>
+<tr>
+<td><em>key_event<br></em></td>
+    <td><em>"keydown"<br></em></td>
+    <td>the jQuery event to listen to for keyboard interaction</td>
+  </tr>
+<tr>
+<td><em>key_action</em></td>
+    <td><em>13 (enter key)</em></td>
+    <td>the keyboard keyCode that will fire the action event (this action can be overridden using the on_action_override option)</td>
+  </tr>
+<tr>
+<td><em>key_down</em></td>
+    <td><em>74 (j key)</em></td>
+    <td>the keyboard keyCode that will fire the down event (this action can be overridden using the on_key_down_override option), which by default will move the highlight class down one matching element</td>
+  </tr>
+<tr>
+<td><em>key_up</em></td>
+    <td><em>75 (k key)</em></td>
+    <td>the keyboard keyCode that will fire the up event (this action can be overridden using the on_key_up_override option), which by default will move the highlight class up one matching element</td>
+  </tr>
+<tr>
+<td><em>key_ignore_when_selector</em></td>
+    <td><em>'input:focus, button:focus'</em></td>
+    <td>the selectors in which the plugin should take no action if any matching elements are found</td>
+  </tr>
+<tr>
+<td><em>on_action_before</em></td>
+    <td><em></em></td>
+    <td>an overrideable function that will fire before the action event is fired</td>
+  </tr>
+<tr>
+<td><em>on_action_after</em></td>
+    <td><em></em></td>
+    <td>an overrideable function that will fire after the action event is fired</td>
+  </tr>
+<tr>
+<td><em>on_action_override</em></td>
+    <td><em></em></td>
+    <td>an overrideable function that will fire instead of the default action event</td>
+  </tr>
+<tr>
+<td><em>on_key_down_before</em></td>
+    <td><em></em></td>
+    <td>an overrideable function that will fire before the key down event is fired</td>
+  </tr>
+<tr>
+<td><em>on_key_down_after</em></td>
+    <td><em></em></td>
+    <td>an overrideable function that will fire after the key down event is fired</td>
+  </tr>
+<tr>
+<td><em>on_key_down_override</em></td>
+    <td><em></em></td>
+    <td>an overrideable function that will fire instead of the default key down event</td>
+  </tr>
+<tr>
+<td><em>on_key_up_before</em></td>
+    <td><em></em></td>
+    <td>an overrideable function that will fire before the key up event is fired</td>
+  </tr>
+<tr>
+<td><em>on_key_up_after</em></td>
+    <td><em></em></td>
+    <td>an overrideable function that will fire after the key up event is fired</td>
+  </tr>
+<tr>
+<td><em>on_key_up_override</em></td>
+    <td><em></em></td>
+    <td>an overrideable function that will fire instead of the default key up event</td>
+  </tr>
+<tr>
+<td><em>jump_between_up_before</em></td>
+    <td><em></em></td>
+    <td>an overrideable function that will fire before the jumping up event is fired</td>
+  </tr>
+<tr>
+<td><em>jump_between_up_after</em></td>
+    <td><em></em></td>
+    <td>an overrideable function that will fire after the jumping up event is fired</td>
+  </tr>
+<tr>
+<td><em>jump_between_up_override</em></td>
+    <td><em></em></td>
+    <td>an overrideable function that will fire instead of the default jumping up event</td>
+  </tr>
+<tr>
+<td><em>jump_between_down_before</em></td>
+    <td><em></em></td>
+    <td>an overrideable function that will fire before the jumping down event is fired</td>
+  </tr>
+<tr>
+<td><em>jump_between_down_after</em></td>
+    <td><em></em></td>
+    <td>an overrideable function that will fire after the jumping down event is fired</td>
+  </tr>
+<tr>
+<td><em>jump_between_down_override</em></td>
+    <td><em></em></td>
+    <td>an overrideable function that will fire instead of the default jumping down event</td>
+  </tr>
+</table><p>That's it! Please note, however, that currently only one usage of the plugin is supported on the page at any given time.</p>
+
+<h2>Contributing to jQuery-traverse</h2>
+
+<p>Once you've made your great commits:</p>
+
+<ol>
+<li>
+<a href="http://help.github.com/forking/">Fork</a> jQuery-traverse</li>
+<li>Create a feature branch</li>
+<li>Write your code (and tests please)</li>
+<li>Push to your branch's origin</li>
+<li>Create a <a href="http://help.github.com/pull-requests/">Pull Request</a> from your branch</li>
+<li>That's it!</li>
+</ol><h2>Links</h2>
+
+<ul>
+<li>Code: <code>git clone git://github.com/adelegard/jquery-traverse.git</code>
+</li>
+<li>Bugs: <a href="http://github.com/adelegard/jquery-traverse/issues">http://github.com/adelegard/jquery-traverse/issues</a>
+</li>
+</ul><h2>Copyright</h2>
+
+<p>Copyright © 2012 Alex Delegard. See LICENSE.txt for
+further details.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/adelegard">adelegard</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-37037811-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
