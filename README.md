@@ -196,3 +196,6 @@ Once you've made your great commits:
 
 Copyright © 2012 Alex Delegard. See LICENSE.txt for
 further details.
+
+[forking]: http://help.github.com/forking/
+[pull requests]: http://help.github.com/pull-requests/
