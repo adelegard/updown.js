@@ -1,0 +1,135 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>JQuery Traverse plugin example 1</title>
+    <script src="../src/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="../src/jquery.traverse.js" type="text/javascript"></script>
+    <link href='example.css' rel='stylesheet' type='text/css'>
+    <script>
+      $(function() {
+        $('.some_table').traverse('tr', {
+          skip_selector: '.skip',
+          loop: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="content">
+      <div>An example of multiple tables with the following options</div>
+      <ul>
+        <li>skip_selector: '.skip'</li>
+        <li>loop: false</li>
+      </ul>
+      <table class="some_table">
+        <thead>
+          <tr>
+            <th>Column1</th>
+            <th>Column2</th>
+            <th>Column3</th>
+            <th>Column4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>data1</td>
+            <td>data2</td>
+            <td>data3</td>
+            <td>data4</td>
+          </tr>
+          <tr class="skip">
+            <td>data1</td>
+            <td>data2</td>
+            <td>data3</td>
+            <td>data4</td>
+          </tr>
+          <tr class="skip">
+            <td>data1</td>
+            <td>data2</td>
+            <td>data3</td>
+            <td>data4</td>
+          </tr>
+          <tr>
+            <td>data1</td>
+            <td>data2</td>
+            <td>data3</td>
+            <td>data4</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="some_table">
+        <thead>
+          <tr>
+            <th>Column1</th>
+            <th>Column2</th>
+            <th>Column3</th>
+            <th>Column4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>data1</td>
+            <td>data2</td>
+            <td>data3</td>
+            <td>data4</td>
+          </tr>
+          <tr>
+            <td>data1</td>
+            <td>data2</td>
+            <td>data3</td>
+            <td>data4</td>
+          </tr>
+          <tr>
+            <td>data1</td>
+            <td>data2</td>
+            <td>data3</td>
+            <td>data4</td>
+          </tr>
+          <tr class="skip">
+            <td>data1</td>
+            <td>data2</td>
+            <td>data3</td>
+            <td>data4</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="some_table">
+        <thead>
+          <tr>
+            <th>Column1</th>
+            <th>Column2</th>
+            <th>Column3</th>
+            <th>Column4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>data1</td>
+            <td>data2</td>
+            <td>data3</td>
+            <td>data4</td>
+          </tr>
+          <tr>
+            <td>data1</td>
+            <td>data2</td>
+            <td>data3</td>
+            <td>data4</td>
+          </tr>
+          <tr>
+            <td>data1</td>
+            <td>data2</td>
+            <td>data3</td>
+            <td>data4</td>
+          </tr>
+          <tr>
+            <td>data1</td>
+            <td>data2</td>
+            <td>data3</td>
+            <td>data4</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

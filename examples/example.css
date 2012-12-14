@@ -3,6 +3,8 @@
   margin: 0 auto;
   text-align: center;
 }
+
+/* container styles */
 .some_container {
   padding: 5px 0px 0px;
   border-bottom: 3px solid blue;
@@ -20,5 +22,20 @@
   border: 1px solid #000;
 }
 .some_container div.highlight {
+  background-color: red;
+}
+
+/* table styles */
+.some_table {
+  border: 1px solid #000;
+  margin-bottom: 20px;
+}
+.some_table tbody tr {
+  background-color: #ddd;
+}
+.some_table tbody tr.skip {
+  background-color: #aaa;
+}
+.some_table tbody tr.highlight {
   background-color: red;
 }
