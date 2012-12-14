@@ -21,6 +21,11 @@ Add the following to your HTML head:
     $('.some_table').traverse('tr');
 ```
 
+## Demos
+
+1. [DIV example][example_1]
+1. [TABLE example][example_2]
+
 ## Options
 
 <table style="width: 100%; border: 1px solid #000000; margin-bottom: 25px;" border="1" cellspacing="0" cellpadding="3">
@@ -199,3 +204,5 @@ further details.
 
 [forking]: http://help.github.com/forking/
 [pull requests]: http://help.github.com/pull-requests/
+[example_1]: http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_1.html
+[example_2]: http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_2.html
