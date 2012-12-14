@@ -10,7 +10,10 @@
       $(function() {
         $('.some_table').traverse('tr', {
           skip_selector: '.skip',
-          loop: false
+          loop: false,
+          on_action_override: function(e) {
+            $('.last_action').text($('.highlight td:first-child').text());
+          }
         });
       });
     </script>
@@ -21,6 +24,7 @@
       <ul>
         <li>skip_selector: '.skip'</li>
         <li>loop: false</li>
+        <li>on_action_override function</li>
       </ul>
       <table class="some_table">
         <thead>
@@ -34,26 +38,26 @@
         <tbody>
           <tr>
             <td>data1</td>
-            <td>data2</td>
-            <td>data3</td>
-            <td>data4</td>
+            <td>data1</td>
+            <td>data1</td>
+            <td>data1</td>
           </tr>
           <tr class="skip">
-            <td>data1</td>
             <td>data2</td>
-            <td>data3</td>
-            <td>data4</td>
+            <td>data2</td>
+            <td>data2</td>
+            <td>data2</td>
           </tr>
           <tr class="skip">
-            <td>data1</td>
-            <td>data2</td>
             <td>data3</td>
-            <td>data4</td>
+            <td>data3</td>
+            <td>data3</td>
+            <td>data3</td>
           </tr>
           <tr>
-            <td>data1</td>
-            <td>data2</td>
-            <td>data3</td>
+            <td>data4</td>
+            <td>data4</td>
+            <td>data4</td>
             <td>data4</td>
           </tr>
         </tbody>
@@ -69,28 +73,28 @@
         </thead>
         <tbody>
           <tr>
-            <td>data1</td>
-            <td>data2</td>
-            <td>data3</td>
-            <td>data4</td>
+            <td>data5</td>
+            <td>data5</td>
+            <td>data5</td>
+            <td>data5</td>
           </tr>
           <tr>
-            <td>data1</td>
-            <td>data2</td>
-            <td>data3</td>
-            <td>data4</td>
+            <td>data6</td>
+            <td>data6</td>
+            <td>data6</td>
+            <td>data6</td>
           </tr>
           <tr>
-            <td>data1</td>
-            <td>data2</td>
-            <td>data3</td>
-            <td>data4</td>
+            <td>data7</td>
+            <td>data7</td>
+            <td>data7</td>
+            <td>data7</td>
           </tr>
           <tr class="skip">
-            <td>data1</td>
-            <td>data2</td>
-            <td>data3</td>
-            <td>data4</td>
+            <td>data8</td>
+            <td>data8</td>
+            <td>data8</td>
+            <td>data8</td>
           </tr>
         </tbody>
       </table>
@@ -105,31 +109,32 @@
         </thead>
         <tbody>
           <tr>
-            <td>data1</td>
-            <td>data2</td>
-            <td>data3</td>
-            <td>data4</td>
+            <td>data9</td>
+            <td>data9</td>
+            <td>data9</td>
+            <td>data9</td>
           </tr>
           <tr>
-            <td>data1</td>
-            <td>data2</td>
-            <td>data3</td>
-            <td>data4</td>
+            <td>data10</td>
+            <td>data10</td>
+            <td>data10</td>
+            <td>data10</td>
           </tr>
           <tr>
-            <td>data1</td>
-            <td>data2</td>
-            <td>data3</td>
-            <td>data4</td>
+            <td>data11</td>
+            <td>data11</td>
+            <td>data11</td>
+            <td>data11</td>
           </tr>
           <tr>
-            <td>data1</td>
-            <td>data2</td>
-            <td>data3</td>
-            <td>data4</td>
+            <td>data12</td>
+            <td>data12</td>
+            <td>data12</td>
+            <td>data12</td>
           </tr>
         </tbody>
       </table>
+      <span>Last Action: <span class="last_action"></span></span>
     </div>
   </body>
 </html>

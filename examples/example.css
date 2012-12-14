@@ -1,7 +1,12 @@
+li {
+  text-align: left;
+}
+
 #content {
   width: 200px;
   margin: 0 auto;
   text-align: center;
+  white-space: nowrap;
 }
 
 /* container styles */
