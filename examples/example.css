@@ -3,10 +3,9 @@ li {
 }
 
 #content {
-  width: 200px;
+  width: 400px;
   margin: 0 auto;
-  text-align: center;
-  white-space: nowrap;
+  text-align: left;
 }
 
 /* container styles */
