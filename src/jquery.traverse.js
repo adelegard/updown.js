@@ -147,12 +147,12 @@
                             if (!opts.jump_between && opts.loop) {
                                 prev_container = $(container_selector + ':eq(0)');
                             } else {
-                                prev_container = $(container_selector + ':eq(' + (container_index-1) + ')');
-                                if (prev_container.length === 0) {
-                                    if (opts.loop) {
-                                        prev_container = $(container_selector + ':last-child');
-                                        container_index = $master.length; // since we will increment this below (hopefully...)
-                                    }
+                                if (container_index === 0) {
+                                    if (!opts.loop) return;
+                                    prev_container = $(container_selector + ':eq(' + ($master.length-1) + ')');
+                                    container_index = $master.length; // since we will decrement this below (hopefully...)
+                                } else {
+                                    prev_container = $(container_selector + ':eq(' + (container_index-1) + ')');
                                 }
                             }
                             var prev_container_traverse_element = _getLastContainerTraverseElement(prev_container);
@@ -231,8 +231,13 @@
         }
 
         function _getLastContainerTraverseElement(container) {
-            return container.find(traverse_selector + ':last-child');
+            var before_selector = '';
+            if (container.find('tbody').length > 0) {
+                before_selector = 'tbody ';
+            }
+            return container.find(before_selector + traverse_selector + ':last');
         }
+
 
         return this;
     };
