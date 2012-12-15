@@ -8,7 +8,7 @@
     <link href='example.css' rel='stylesheet' type='text/css'>
     <script>
       $(function() {
-        $('.some_table').traverse('tr', {
+        $('.some_table').traverse('tbody tr', {
           skip_selector: '.skip',
           loop: false,
           on_action_override: function(e) {

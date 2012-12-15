@@ -217,23 +217,28 @@
         }
 
         function _getFirstContainerTraverseElement(container) {
-            // attempting to account for crappy table markup
-            // since the original use of this was for tables with (potentially) crappy markup
-            var thead_exists = container.find('thead').length > 0;
-            var tbody_exists = container.find('tbody').length > 0;
-            if (thead_exists && tbody_exists) {
-                return container.find('tbody ' + traverse_selector + ':first-child');
-            } else if (!thead_exists && tbody_exists) {
-                return container.find(traverse_selector + ':nth-child(2)');
-            } else if (!thead_exists && !tbody_exists) {
-                return container.find(traverse_selector + ':first-child');
+            if (opts.table_row_helper) {
+                // attempting to account for inconsistent table markup
+                // Specifically, tables with their header row as:
+                //   - the first row in the tbody
+                //   - the first row in the table with no thead or tbody
+                var thead_exists = container.find('thead').length > 0;
+                var tbody_exists = container.find('tbody').length > 0;
+                if (thead_exists && tbody_exists) {
+                    return container.find('tbody ' + traverse_selector + ':first');
+                } else if (!thead_exists && tbody_exists) {
+                    return container.find(traverse_selector + ':nth-child(2)');
+                }
             }
+            return container.find(traverse_selector + ':first');
         }
 
         function _getLastContainerTraverseElement(container) {
             var before_selector = '';
-            if (container.find('tbody').length > 0) {
-                before_selector = 'tbody ';
+            if (opts.table_row_helper) {
+                if (container.find('tbody').length > 0) {
+                    before_selector = 'tbody ';
+                }
             }
             return container.find(before_selector + traverse_selector + ':last');
         }
@@ -246,6 +251,7 @@
         jump_between: true, //jump between containers at traverse boundaries
         loop: true, // loop to the beginning/end of container boundaries
         skip_selector: null, // skip over these selectors when traversing
+        table_row_helper: false, // accounts for an inconsistently placed header row - designed to be used with a selector of 'tr'
         move_scrollbar: true, //move the scroll bar to keep the 'highlight_class' visible
         highlight_class: 'highlight',
         action_window_location_href: true, // browser redirect to found anchor's HREF on 'key_action'
