@@ -17,14 +17,46 @@ Add the following to your HTML head:
 
 ## Usage
 
+Basic use case:
 ``` javascript
-    $('.some_table').traverse('tr');
+    $('.some_table').traverse('tbody tr');
 ```
+This will do the following:
+
+1. Add a class of 'highlight' onto the first found 'tbody tr' element within '.some_table'
+2. Let you move up and down between these elements (removing and adding the 'highlight' class) with the j/k keys
+
+Advanced use case:
+``` javascript
+    $('.some_table').traverse('tbody tr', {
+        skip_selector: '.skip',
+        loop: false,
+        move_scrollbar: false,
+        key_action: 18, // alt
+        key_down: [74, 40], // j, down arrow
+        key_up: [75, 38], // k, up arrow
+        on_action_override: function() {
+            $('.last_action').text($('.highlight td:first').text());
+        }
+    });
+```
+This will do the following:
+
+1. Add a class of 'highlight' onto the first found 'tbody tr' element within '.some_table'
+2. Skip over elements with the 'skip' class
+3. Not loop (once you hit your last 'tbody tr' element going 'down' once more will not jump back to the first 'tbody tr')
+4. Not move the scrollbar to keep the current 'highlight' class visible
+5. Fire the 'action' event on 18
+6. Fire the key_down event on 74 or 40
+7. Fire the key_up event on 75 or 38
+8. Execute a custom 'action' method on the 'action' event
 
 ## Demos
 
 1. [DIV example][example_1]
 1. [TABLE example][example_2]
+
+... more to come.
 
 ## Options
 
