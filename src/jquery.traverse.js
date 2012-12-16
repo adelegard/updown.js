@@ -57,13 +57,17 @@
             // if user has focus over an input or a button then do nothing
             if ($(opts.key_ignore_when_selector).length > 0) return;
 
+            var cur_traverse_element = $(cur_highlighted_selector),
+                prev_traverse_element = cur_traverse_element.prevAll(traverse_selector + ':first'),
+                next_traverse_element = cur_traverse_element.nextAll(traverse_selector + ':first');
+
             // action key
             if (_is_key(opts.key_action, e.keyCode)) {
                 if (on_action_before) {
-                    on_action_before.apply(this);
+                    on_action_before.call(this, e);
                 }
                 if (on_action_override) {
-                    on_action_override.apply(this);
+                    on_action_override.call(this, e);
                 } else {
                     var first_anchor = $('.' + opts.highlight_class + opts.action_selector);
                     // make sure we have an anchor and that the user isn't in an input
@@ -72,28 +76,24 @@
                     }
                 }
                 if (on_action_after) {
-                    on_action_after.apply(this);
+                    on_action_after.call(this, e);
                 }
             }
-
-            var cur_traverse_element = $(cur_highlighted_selector);
-            var prev_traverse_element = cur_traverse_element.prevAll(traverse_selector + ':first');
-            var next_traverse_element = cur_traverse_element.nextAll(traverse_selector + ':first');
             
             // key down
             if (_is_key(opts.key_down, e.keyCode)) {
                 if (on_key_down_before) {
-                    on_key_down_before.apply(this);
+                    on_key_down_before.call(this, e);
                 }
                 if (on_key_down_override) {
-                    on_key_down_override.apply(this);
+                    on_key_down_override.call(this, e);
                 } else {
                     if (next_traverse_element.length === 0) {
                         if (opts.jump_between && jump_between_down_before) {
-                            jump_between_down_before.apply(this);
+                            jump_between_down_before.call(this, e);
                         }
                         if (opts.jump_between && jump_between_down_override) {
-                            jump_between_down_override.apply(this);
+                            jump_between_down_override.call(this, e);
                         } else {
                             if (!opts.jump_between && !opts.loop) return;
                             var next_container = null;
@@ -117,30 +117,30 @@
                             return;
                         }
                         if (opts.jump_between && jump_between_down_after) {
-                            jump_between_down_after.apply(this);
+                            jump_between_down_after.call(this, e);
                         }
                     }
                     $(container_traverse_selector).removeClass(opts.highlight_class);
                     next_traverse_element.addClass(opts.highlight_class);
                 }
                 if (on_key_down_after) {
-                    on_key_down_after.apply(this);
+                    on_key_down_after.call(this, e);
                 }
 
             // key up
             } else if (_is_key(opts.key_up, e.keyCode)) {
                 if (on_key_up_before) {
-                    on_key_up_before.apply(this);
+                    on_key_up_before.call(this, e);
                 }
                 if (on_key_up_override) {
-                    on_key_up_override.apply(this);
+                    on_key_up_override.call(this, e);
                 } else {
                     if (prev_traverse_element.length === 0) {
                         if (opts.jump_between && jump_between_up_before) {
-                            jump_between_up_before.apply(this);
+                            jump_between_up_before.call(this, e);
                         }
                         if (opts.jump_between && jump_between_up_override) {
-                            jump_between_up_override.apply(this);
+                            jump_between_up_override.call(this, e);
                         } else {
                             if (!opts.jump_between && !opts.loop) return;
                             var prev_container = null;
@@ -164,35 +164,39 @@
                             return;
                         }
                         if (opts.jump_between && jump_between_up_after) {
-                            jump_between_up_after.apply(this);
+                            jump_between_up_after.call(this, e);
                         }
                     }
                     $(container_traverse_selector).removeClass(opts.highlight_class);
                     prev_traverse_element.addClass(opts.highlight_class);
                 }
                 if (on_key_up_after) {
-                    on_key_up_after.apply(this);
+                    on_key_up_after.call(this, e);
                 }
             }
 
             // move the scroll bar so our highlight_class is visible
             if (opts.move_scrollbar && (_is_key(opts.key_down, e.keyCode) || _is_key(opts.key_up, e.keyCode))) {
-                var the_traverse_element = $(cur_highlighted_selector);
-                if (_in_view(the_traverse_element, 0)) return false;
-                var offset = the_traverse_element.offset(); // Contains .top and .left
-                var window_height = $(window).height();
-
-                if (_below_view(the_traverse_element, 0)) {
-                    offset.top = (offset.top - (window_height - (the_traverse_element.height() * 3)));
-                    $('html, body').scrollTop(offset.top);
-                }
-                else if (_above_view(the_traverse_element, 0)) {
-                    offset.top = (offset.top - (the_traverse_element.height() * 3));
-                    $('html, body').scrollTop(offset.top);
-                }
-                return false;
+                _keep_element_in_view(cur_highlighted_selector);
             }
         });
+
+        function _keep_element_in_view(element) {
+            var the_traverse_element = $(element);
+            if (_in_view(the_traverse_element, 0)) return false;
+            var offset = the_traverse_element.offset(); // Contains .top and .left
+            var window_height = $(window).height();
+
+            if (_below_view(the_traverse_element, 0)) {
+                offset.top = (offset.top - (window_height - (the_traverse_element.height() * 3)));
+                $('html, body').scrollTop(offset.top);
+            }
+            else if (_above_view(the_traverse_element, 0)) {
+                offset.top = (offset.top - (the_traverse_element.height() * 3));
+                $('html, body').scrollTop(offset.top);
+            }
+            return false;
+        }
 
         function _below_view(element, threshold) {
             var fold = $(window).height() + $(window).scrollTop();
@@ -242,7 +246,6 @@
             }
             return container.find(before_selector + traverse_selector + ':last');
         }
-
 
         return this;
     };

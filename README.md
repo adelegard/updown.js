@@ -89,6 +89,17 @@ This will do the following:
     <td style="padding-left: 10px;">the selector(s) to skip over during traversal</td>
   </tr>
   <tr>
+    <td style="text-align: right; padding-right: 10px;"><em>table_row_helper</em></td>
+    <td style="text-align: right; padding-right: 10px;"><em>false</em></td>
+    <td style="padding-left: 10px;"><div>attempting to account for inconsistent table markup</div>
+                                    <div>Specifically, tables with their header row as:</div>
+                                    <ul>
+                                      <li>the first row in the tbody</li>
+                                      <li>the first row in the table with no thead or tbody</li>
+                                    </ul>
+    </td>
+  </tr>
+  <tr>
     <td style="text-align: right; padding-right: 10px;"><em>move_scrollbar</em></td>
     <td style="text-align: right; padding-right: 10px;"><em>true</em></td>
     <td style="padding-left: 10px;">whether or not the scrollbar should be moved to keep the highlighted element visible</td>
