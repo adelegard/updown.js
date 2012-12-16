@@ -54,7 +54,8 @@ This will do the following:
 ## Demos
 
 1. [DIV example][example_1]
-1. [TABLE example][example_2]
+2. [TABLE example][example_2]
+3. [TABLE example (using more options)][example_3]
 
 ... more to come.
 
@@ -249,3 +250,4 @@ further details.
 [pull requests]: http://help.github.com/pull-requests/
 [example_1]: http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_1.html
 [example_2]: http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_2.html
+[example_2]: http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_3.html
