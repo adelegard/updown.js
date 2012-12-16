@@ -56,6 +56,7 @@ This will do the following:
 1. [DIV example][example_1]
 2. [TABLE example][example_2]
 3. [TABLE example (using more options)][example_3]
+3. [TABLE example (fire key events using buttons)][example_4]
 
 ... more to come.
 
@@ -251,3 +252,4 @@ further details.
 [example_1]: http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_1.html
 [example_2]: http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_2.html
 [example_3]: http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_3.html
+[example_4]: http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_4.html
