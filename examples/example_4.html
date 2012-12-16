@@ -1,0 +1,151 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>JQuery Traverse plugin example 1</title>
+    <script src="../src/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="../src/jquery.traverse.js" type="text/javascript"></script>
+    <link href='example.css' rel='stylesheet' type='text/css'>
+    <script>
+      $(function() {
+
+        $('.down').click(function(e) {
+          trigger(74);
+        });
+        $('.up').click(function(e) {
+          trigger(75);
+        });
+        function trigger(key) {
+          var e = jQuery.Event("keydown");
+          e.keyCode = key;
+          $(document).trigger(e);
+        }
+
+        $('.some_table').traverse('tbody tr', {
+          skip_selector: '.skip',
+          key_ignore_when_selector: 'input:focus'
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="content">
+      <div>An example of multiple tables with the following options</div>
+      <ul>
+        <li>skip_selector: '.skip'</li>
+        <li>key_ignore_when_selector: 'input:focus'</li>
+        <li>buttons to fire our key events</li>
+      </ul>
+      <button class="down">Down</button>
+      <button class="up">Up</button>
+      <table class="some_table">
+        <thead>
+          <tr>
+            <th>Column1</th>
+            <th>Column2</th>
+            <th>Column3</th>
+            <th>Column4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>data1</td>
+            <td>data1</td>
+            <td>data1</td>
+            <td>data1</td>
+          </tr>
+          <tr class="skip">
+            <td>data2</td>
+            <td>data2</td>
+            <td>data2</td>
+            <td>data2</td>
+          </tr>
+          <tr class="skip">
+            <td>data3</td>
+            <td>data3</td>
+            <td>data3</td>
+            <td>data3</td>
+          </tr>
+          <tr>
+            <td>data4</td>
+            <td>data4</td>
+            <td>data4</td>
+            <td>data4</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="some_table">
+        <thead>
+          <tr>
+            <th>Column1</th>
+            <th>Column2</th>
+            <th>Column3</th>
+            <th>Column4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>data5</td>
+            <td>data5</td>
+            <td>data5</td>
+            <td>data5</td>
+          </tr>
+          <tr>
+            <td>data6</td>
+            <td>data6</td>
+            <td>data6</td>
+            <td>data6</td>
+          </tr>
+          <tr>
+            <td>data7</td>
+            <td>data7</td>
+            <td>data7</td>
+            <td>data7</td>
+          </tr>
+          <tr class="skip">
+            <td>data8</td>
+            <td>data8</td>
+            <td>data8</td>
+            <td>data8</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="some_table">
+        <thead>
+          <tr>
+            <th>Column1</th>
+            <th>Column2</th>
+            <th>Column3</th>
+            <th>Column4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>data9</td>
+            <td>data9</td>
+            <td>data9</td>
+            <td>data9</td>
+          </tr>
+          <tr>
+            <td>data10</td>
+            <td>data10</td>
+            <td>data10</td>
+            <td>data10</td>
+          </tr>
+          <tr>
+            <td>data11</td>
+            <td>data11</td>
+            <td>data11</td>
+            <td>data11</td>
+          </tr>
+          <tr>
+            <td>data12</td>
+            <td>data12</td>
+            <td>data12</td>
+            <td>data12</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
