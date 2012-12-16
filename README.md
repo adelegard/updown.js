@@ -250,4 +250,4 @@ further details.
 [pull requests]: http://help.github.com/pull-requests/
 [example_1]: http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_1.html
 [example_2]: http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_2.html
-[example_2]: http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_3.html
+[example_3]: http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_3.html
