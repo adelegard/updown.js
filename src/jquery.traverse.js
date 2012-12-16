@@ -62,7 +62,7 @@
                 next_traverse_element = cur_traverse_element.nextAll(traverse_selector + ':first');
 
             // action key
-            if (_is_key(opts.key_action, e.keyCode)) {
+            if (_is_key(opts.key_action, e.which)) {
                 if (on_action_before) {
                     on_action_before.call(this, e);
                 }
@@ -81,7 +81,7 @@
             }
             
             // key down
-            if (_is_key(opts.key_down, e.keyCode)) {
+            if (_is_key(opts.key_down, e.which)) {
                 if (on_key_down_before) {
                     on_key_down_before.call(this, e);
                 }
@@ -128,7 +128,7 @@
                 }
 
             // key up
-            } else if (_is_key(opts.key_up, e.keyCode)) {
+            } else if (_is_key(opts.key_up, e.which)) {
                 if (on_key_up_before) {
                     on_key_up_before.call(this, e);
                 }
@@ -176,7 +176,7 @@
             }
 
             // move the scroll bar so our highlight_class is visible
-            if (opts.move_scrollbar && (_is_key(opts.key_down, e.keyCode) || _is_key(opts.key_up, e.keyCode))) {
+            if (opts.move_scrollbar && (_is_key(opts.key_down, e.which) || _is_key(opts.key_up, e.which))) {
                 _keep_element_in_view(cur_highlighted_selector);
             }
         });
@@ -210,12 +210,12 @@
             return !_below_view(element, threshold) && !_above_view(element, threshold);
         }
 
-        function _is_key(keys, keyCode) {
+        function _is_key(keys, which) {
             if (typeof(keys) === 'number') {
-                return keys === keyCode;
+                return keys === which;
             }
             if (typeof(keys) === 'object') {
-                return keys.indexOf(keyCode) != -1;
+                return keys.indexOf(which) != -1;
             }
             return false;
         }
