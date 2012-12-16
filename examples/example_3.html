@@ -15,8 +15,8 @@
           key_action: 18, // alt
           key_down: [74, 40], // j, down arrow
           key_up: [75, 38], // k, up arrow
-          on_action_override: function() {
-            $('.last_action').text($('.highlight td:first').text());
+          on_action_override: function(e) { // the keypress event is passed in from the plugin
+            $('.last_action').text($('.highlight td:first').text() + ' (via key ' + e.keyCode + ')');
           }
         });
       });
