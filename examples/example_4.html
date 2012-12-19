@@ -17,7 +17,7 @@
         });
         function trigger(key) {
           var e = jQuery.Event("keydown");
-          e.keyCode = key;
+          e.which = key;
           $(document).trigger(e);
         }
 
