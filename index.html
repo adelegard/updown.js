@@ -46,8 +46,50 @@
 
 <h2>Usage</h2>
 
-<div class="highlight"><pre>    <span class="nx">$</span><span class="p">(</span><span class="s1">'.some_table'</span><span class="p">).</span><span class="nx">traverse</span><span class="p">(</span><span class="s1">'tr'</span><span class="p">);</span>
+<p>Basic use case:</p>
+
+<div class="highlight"><pre>    <span class="nx">$</span><span class="p">(</span><span class="s1">'.some_table'</span><span class="p">).</span><span class="nx">traverse</span><span class="p">(</span><span class="s1">'tbody tr'</span><span class="p">);</span>
 </pre></div>
+
+<p>This will do the following:</p>
+
+<ol>
+<li>Add a class of 'highlight' onto the first found 'tbody tr' element within '.some_table'</li>
+<li>Let you move up and down between these elements (removing and adding the 'highlight' class) with the j/k keys</li>
+</ol><p>Advanced use case:</p>
+
+<div class="highlight"><pre>    <span class="nx">$</span><span class="p">(</span><span class="s1">'.some_table'</span><span class="p">).</span><span class="nx">traverse</span><span class="p">(</span><span class="s1">'tbody tr'</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">skip_selector</span><span class="o">:</span> <span class="s1">'.skip'</span><span class="p">,</span>
+        <span class="nx">loop</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">move_scrollbar</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">key_action</span><span class="o">:</span> <span class="mi">18</span><span class="p">,</span> <span class="c1">// alt</span>
+        <span class="nx">key_down</span><span class="o">:</span> <span class="p">[</span><span class="mi">74</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span> <span class="c1">// j, down arrow</span>
+        <span class="nx">key_up</span><span class="o">:</span> <span class="p">[</span><span class="mi">75</span><span class="p">,</span> <span class="mi">38</span><span class="p">],</span> <span class="c1">// k, up arrow</span>
+        <span class="nx">on_action_override</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">'.last_action'</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">'.highlight td:first'</span><span class="p">).</span><span class="nx">text</span><span class="p">());</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+</pre></div>
+
+<p>This will do the following:</p>
+
+<ol>
+<li>Add a class of 'highlight' onto the first found 'tbody tr' element within '.some_table'</li>
+<li>Skip over elements with the 'skip' class</li>
+<li>Not loop (once you hit your last 'tbody tr' element going 'down' once more will not jump back to the first 'tbody tr')</li>
+<li>Not move the scrollbar to keep the current 'highlight' class visible</li>
+<li>Fire the 'action' event on 18</li>
+<li>Fire the key_down event on 74 or 40</li>
+<li>Fire the key_up event on 75 or 38</li>
+<li>Execute a custom 'action' method on the 'action' event</li>
+</ol><h2>Demos</h2>
+
+<ol>
+<li><a href="http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_1.html">DIV example</a></li>
+<li><a href="http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_2.html">TABLE example</a></li>
+<li><a href="http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_3.html">TABLE example (using more options)</a></li>
+<li><a href="http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_4.html">TABLE example (fire key events using buttons)</a></li>
+</ol><p>... more to come.</p>
 
 <h2>Options</h2>
 
@@ -77,6 +119,18 @@
 <td><em>skip_selector</em></td>
     <td><em></em></td>
     <td>the selector(s) to skip over during traversal</td>
+  </tr>
+<tr>
+<td><em>table_row_helper</em></td>
+    <td><em>false</em></td>
+    <td>
+<div>attempting to account for inconsistent table markup</div>
+                                    <div>Specifically, tables with their header row as:</div>
+                                    <ul>
+<li>the first row in the tbody</li>
+                                      <li>the first row in the table with no thead or tbody</li>
+                                    </ul>
+</td>
   </tr>
 <tr>
 <td><em>move_scrollbar</em></td>
