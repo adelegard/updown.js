@@ -114,14 +114,14 @@
                                 next_container_traverse_element.addClass(opts.highlight_class);
                                 container_index++;
                             }
-                            return;
                         }
                         if (opts.jump_between && jump_between_down_after) {
                             jump_between_down_after.call(this, e);
                         }
+                    } else {
+                        $(container_traverse_selector).removeClass(opts.highlight_class);
+                        next_traverse_element.addClass(opts.highlight_class);
                     }
-                    $(container_traverse_selector).removeClass(opts.highlight_class);
-                    next_traverse_element.addClass(opts.highlight_class);
                 }
                 if (on_key_down_after) {
                     on_key_down_after.call(this, e);
@@ -161,14 +161,14 @@
                                 prev_container_traverse_element.addClass(opts.highlight_class);
                                 container_index--;
                             }
-                            return;
                         }
                         if (opts.jump_between && jump_between_up_after) {
                             jump_between_up_after.call(this, e);
                         }
+                    } else {
+                        $(container_traverse_selector).removeClass(opts.highlight_class);
+                        prev_traverse_element.addClass(opts.highlight_class);
                     }
-                    $(container_traverse_selector).removeClass(opts.highlight_class);
-                    prev_traverse_element.addClass(opts.highlight_class);
                 }
                 if (on_key_up_after) {
                     on_key_up_after.call(this, e);
@@ -185,7 +185,7 @@
             var the_traverse_element = $(element);
             if (_in_view(the_traverse_element, 0)) return false;
             var offset = the_traverse_element.offset(); // Contains .top and .left
-            var window_height = $(window).height();
+            var window_height = window.innerHeight;
 
             if (_below_view(the_traverse_element, 0)) {
                 offset.top = (offset.top - (window_height - (the_traverse_element.height() * 3)));
@@ -199,12 +199,12 @@
         }
 
         function _below_view(element, threshold) {
-            var fold = $(window).height() + $(window).scrollTop();
-            return fold <= $(element).offset().top - threshold;
+            var fold = window.innerHeight + $(window).scrollTop();
+            return fold <= element.offset().top - threshold;
         }
         function _above_view(element, threshold) {
             var top = $(window).scrollTop();
-            return top >= $(element).offset().top + $(element).height() - threshold;
+            return top >= element.offset().top + element.height() - threshold;
         }
         function _in_view(element, threshold) {
             return !_below_view(element, threshold) && !_above_view(element, threshold);
