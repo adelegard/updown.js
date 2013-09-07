@@ -19,14 +19,18 @@ li {
   margin: 10px 0px;
 }
 .some_container div {
-  width: 200px;
   height: 50px;
   margin-bottom: 10px;
   background-color: #ddd;
-  border: 1px solid #000;
+  border: 1px solid #777;
+  border-radius: 5px;
+  -webkit-transition: background-color 200ms ease;
+  -moz-transition: background-color 200ms ease;
+  -o-transition: background-color 200ms ease;
+  transition: background-color 200ms ease;
 }
 .some_container div.highlight {
-  background-color: red;
+  background-color: orange;
 }
 
 /* table styles */
