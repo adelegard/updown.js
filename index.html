@@ -28,27 +28,22 @@
         </ul>
       </header>
       <section>
-        <h1>jquery-traverse</h1>
+        <h1>
+<a name="jquery-traverse" class="anchor" href="#jquery-traverse"><span class="octicon octicon-link"></span></a>jquery-traverse</h1>
 
 <p>The jquery-traverse plugin will give you a flexible way to traverse through containers and their child elements with either keyboard commands or custom events.</p>
 
-<h2>Requirements</h2>
+<h2>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
 
 <ul>
 <li>jQuery 1.4.2+</li>
-</ul><h2>Installation</h2>
-
-<p>Add the following to your HTML head:</p>
-
-<div class="highlight"><pre>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.traverse.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
-
-<h2>Usage</h2>
+</ul><h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
 <p>Basic use case:</p>
 
-<div class="highlight"><pre>    <span class="nx">$</span><span class="p">(</span><span class="s1">'.some_table'</span><span class="p">).</span><span class="nx">traverse</span><span class="p">(</span><span class="s1">'tbody tr'</span><span class="p">);</span>
+<div class="highlight highlight-javascript"><pre>    <span class="nx">$</span><span class="p">(</span><span class="s1">'.some_table'</span><span class="p">).</span><span class="nx">traverse</span><span class="p">(</span><span class="s1">'tbody tr'</span><span class="p">);</span>
 </pre></div>
 
 <p>This will do the following:</p>
@@ -58,7 +53,7 @@
 <li>Let you move up and down between these elements (removing and adding the 'highlight' class) with the j/k keys</li>
 </ol><p>Advanced use case:</p>
 
-<div class="highlight"><pre>    <span class="nx">$</span><span class="p">(</span><span class="s1">'.some_table'</span><span class="p">).</span><span class="nx">traverse</span><span class="p">(</span><span class="s1">'tbody tr'</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight highlight-javascript"><pre>    <span class="nx">$</span><span class="p">(</span><span class="s1">'.some_table'</span><span class="p">).</span><span class="nx">traverse</span><span class="p">(</span><span class="s1">'tbody tr'</span><span class="p">,</span> <span class="p">{</span>
         <span class="nx">skip_selector</span><span class="o">:</span> <span class="s1">'.skip'</span><span class="p">,</span>
         <span class="nx">loop</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
         <span class="nx">move_scrollbar</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
@@ -82,19 +77,19 @@
 <li>Fire the key_down event on 74 or 40</li>
 <li>Fire the key_up event on 75 or 38</li>
 <li>Execute a custom 'action' method on the 'action' event</li>
-</ol><h2>Demos</h2>
+</ol><h2>
+<a name="demos" class="anchor" href="#demos"><span class="octicon octicon-link"></span></a>Demos</h2>
 
 <ol>
-<li><a href="https://rawgithub.com/adelegard/jquery-traverse/master/examples/example_1.html">DIV example</a></li>
-<li><a href="https://rawgithub.com/adelegard/jquery-traverse/master/examples/example_2.html">TABLE example</a></li>
-<li><a href="https://rawgithub.com/adelegard/jquery-traverse/master/examples/example_3.html">TABLE example (using more options)</a></li>
-<li><a href="https://rawgithub.com/adelegard/jquery-traverse/master/examples/example_4.html">TABLE example (fire key events using buttons)</a></li>
-<li><a href="https://rawgithub.com/adelegard/jquery-traverse/master/examples/example_5.html">TABLE example (large number of elements)</a></li>
-</ol><p>... more to come.</p>
+<li><a href="http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_1.html">DIV example</a></li>
+<li><a href="http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_2.html">TABLE example</a></li>
+<li><a href="http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_3.html">TABLE example (using more options)</a></li>
+<li><a href="http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_4.html">TABLE example (fire key events using buttons)</a></li>
+<li><a href="http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_5.html">TABLE example (large number of elements)</a></li>
+</ol><h2>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h2>
 
-<h2>Options</h2>
-
-<table border="1" cellspacing="0" cellpadding="3">
+<table border="1" cellspacing="0" cellpadding="3"><tbody>
 <tr>
 <th align="center" valign="middle">
       Option Name
@@ -253,9 +248,10 @@
     <td><em></em></td>
     <td>an overrideable function that will fire instead of the default jumping down event</td>
   </tr>
-</table><p>That's it! Please note, however, that currently only one usage of the plugin is supported on the page at any given time.</p>
+</tbody></table><p>That's it! Please note, however, that currently only one usage of the plugin is supported on the page at any given time.</p>
 
-<h2>Contributing to jQuery-traverse</h2>
+<h2>
+<a name="contributing-to-jquery-traverse" class="anchor" href="#contributing-to-jquery-traverse"><span class="octicon octicon-link"></span></a>Contributing to jQuery-traverse</h2>
 
 <p>Once you've made your great commits:</p>
 
@@ -267,14 +263,16 @@
 <li>Push to your branch's origin</li>
 <li>Create a <a href="http://help.github.com/pull-requests/">Pull Request</a> from your branch</li>
 <li>That's it!</li>
-</ol><h2>Links</h2>
+</ol><h2>
+<a name="links" class="anchor" href="#links"><span class="octicon octicon-link"></span></a>Links</h2>
 
 <ul>
 <li>Code: <code>git clone git://github.com/adelegard/jquery-traverse.git</code>
 </li>
 <li>Bugs: <a href="http://github.com/adelegard/jquery-traverse/issues">http://github.com/adelegard/jquery-traverse/issues</a>
 </li>
-</ul><h2>Copyright</h2>
+</ul><h2>
+<a name="copyright" class="anchor" href="#copyright"><span class="octicon octicon-link"></span></a>Copyright</h2>
 
 <p>Copyright © 2012 Alex Delegard. See LICENSE.txt for
 further details.</p>
