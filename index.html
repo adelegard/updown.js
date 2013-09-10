@@ -1,37 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Jquery-traverse by adelegard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <title>UpDown.js by adelegard</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Jquery-traverse</h1>
-        <p>A jQuery plugin for traversing elements with the keyboard.</p>
+    <header>
+      <div class="inner">
+        <h1>UpDown.js</h1>
+        <h2>A jQuery plugin for moving up and down between elements.</h2>
+        <a href="https://github.com/adelegard/updown.js" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
 
-        <p class="view"><a href="https://github.com/adelegard/jquery-traverse">View the Project on GitHub <small>adelegard/jquery-traverse</small></a></p>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="updownjs" class="anchor" href="#updownjs"><span class="octicon octicon-link"></span></a>UpDown.js</h1>
 
-
-        <ul>
-          <li><a href="https://github.com/adelegard/jquery-traverse/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/adelegard/jquery-traverse/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/adelegard/jquery-traverse">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a name="jquery-traverse" class="anchor" href="#jquery-traverse"><span class="octicon octicon-link"></span></a>jquery-traverse</h1>
-
-<p>The jquery-traverse plugin will give you a flexible way to traverse through containers and their child elements with either keyboard commands or custom events.</p>
+<p>UpDown.js is a jquery plugin that provides a flexible way to traverse through containers and their child elements with either keyboard commands or custom events.</p>
 
 <h2>
 <a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
@@ -43,7 +43,7 @@
 
 <p>Basic use case:</p>
 
-<div class="highlight highlight-javascript"><pre>    <span class="nx">$</span><span class="p">(</span><span class="s1">'.some_table'</span><span class="p">).</span><span class="nx">traverse</span><span class="p">(</span><span class="s1">'tbody tr'</span><span class="p">);</span>
+<div class="highlight highlight-javascript"><pre>    <span class="nx">$</span><span class="p">(</span><span class="s1">'.some_table'</span><span class="p">).</span><span class="nx">updown</span><span class="p">(</span><span class="s1">'tbody tr'</span><span class="p">);</span>
 </pre></div>
 
 <p>This will do the following:</p>
@@ -53,7 +53,7 @@
 <li>Let you move up and down between these elements (removing and adding the 'highlight' class) with the j/k keys</li>
 </ol><p>Advanced use case:</p>
 
-<div class="highlight highlight-javascript"><pre>    <span class="nx">$</span><span class="p">(</span><span class="s1">'.some_table'</span><span class="p">).</span><span class="nx">traverse</span><span class="p">(</span><span class="s1">'tbody tr'</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight highlight-javascript"><pre>    <span class="nx">$</span><span class="p">(</span><span class="s1">'.some_table'</span><span class="p">).</span><span class="nx">updown</span><span class="p">(</span><span class="s1">'tbody tr'</span><span class="p">,</span> <span class="p">{</span>
         <span class="nx">skip_selector</span><span class="o">:</span> <span class="s1">'.skip'</span><span class="p">,</span>
         <span class="nx">loop</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
         <span class="nx">move_scrollbar</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
@@ -81,11 +81,11 @@
 <a name="demos" class="anchor" href="#demos"><span class="octicon octicon-link"></span></a>Demos</h2>
 
 <ol>
-<li><a href="http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_1.html">DIV example</a></li>
-<li><a href="http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_2.html">TABLE example</a></li>
-<li><a href="http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_3.html">TABLE example (using more options)</a></li>
-<li><a href="http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_4.html">TABLE example (fire key events using buttons)</a></li>
-<li><a href="http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_5.html">TABLE example (large number of elements)</a></li>
+<li><a href="https://rawgithub.com/adelegard/updown.js/master/examples/example_1.html">The Default</a></li>
+<li><a href="https://rawgithub.com/adelegard/updown.js/master/examples/example_2.html">Skipping and No Looping</a></li>
+<li><a href="https://rawgithub.com/adelegard/updown.js/master/examples/example_3.html">Keys and Action</a></li>
+<li><a href="https://rawgithub.com/adelegard/updown.js/master/examples/example_4.html">Buttons</a></li>
+<li><a href="https://rawgithub.com/adelegard/updown.js/master/examples/example_5.html">Performance</a></li>
 </ol><h2>
 <a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h2>
 
@@ -132,6 +132,16 @@
 <td><em>move_scrollbar</em></td>
     <td><em>true</em></td>
     <td>whether or not the scrollbar should be moved to keep the highlighted element visible</td>
+  </tr>
+<tr>
+<td><em>scrollbar_move_additional_px</em></td>
+    <td><em>200</em></td>
+    <td>how many additional pixels we should move when keeping the 'highlight_class' visible (in addition to height of 'highlight_class' element)</td>
+  </tr>
+<tr>
+<td><em>scrollbar_animate_speed</em></td>
+    <td><em>300</em></td>
+    <td>the speed (in milliseconds) of the scrollbar animation</td>
   </tr>
 <tr>
 <td><em>highlight_class</em></td>
@@ -251,13 +261,13 @@
 </tbody></table><p>That's it! Please note, however, that currently only one usage of the plugin is supported on the page at any given time.</p>
 
 <h2>
-<a name="contributing-to-jquery-traverse" class="anchor" href="#contributing-to-jquery-traverse"><span class="octicon octicon-link"></span></a>Contributing to jQuery-traverse</h2>
+<a name="contributing-to-updownjs" class="anchor" href="#contributing-to-updownjs"><span class="octicon octicon-link"></span></a>Contributing to UpDown.js</h2>
 
 <p>Once you've made your great commits:</p>
 
 <ol>
 <li>
-<a href="http://help.github.com/forking/">Fork</a> jQuery-traverse</li>
+<a href="http://help.github.com/forking/">Fork</a> UpDown.js</li>
 <li>Create a feature branch</li>
 <li>Write your code (and tests please)</li>
 <li>Push to your branch's origin</li>
@@ -267,23 +277,35 @@
 <a name="links" class="anchor" href="#links"><span class="octicon octicon-link"></span></a>Links</h2>
 
 <ul>
-<li>Code: <code>git clone git://github.com/adelegard/jquery-traverse.git</code>
+<li>Code: <code>git clone git://github.com/adelegard/updown.js.git</code>
 </li>
-<li>Bugs: <a href="http://github.com/adelegard/jquery-traverse/issues">http://github.com/adelegard/jquery-traverse/issues</a>
+<li>Bugs: <a href="http://github.com/adelegard/updown.js/issues">http://github.com/adelegard/updown.js/issues</a>
 </li>
 </ul><h2>
 <a name="copyright" class="anchor" href="#copyright"><span class="octicon octicon-link"></span></a>Copyright</h2>
 
-<p>Copyright © 2012 Alex Delegard. See LICENSE.txt for
+<p>Copyright © 2013 Alex Delegard. See LICENSE.txt for
 further details.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/adelegard">adelegard</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/adelegard/updown.js/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/adelegard/updown.js/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/adelegard/updown.js"></a> is maintained by <a href="https://github.com/adelegard">adelegard</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-              <script type="text/javascript">
+
+            <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
