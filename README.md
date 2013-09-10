@@ -97,6 +97,11 @@ This will do the following:
     <td style="padding-left: 10px;">whether or not the scrollbar should be moved to keep the highlighted element visible</td>
   </tr>
   <tr>
+    <td style="text-align: right; padding-right: 10px;"><em>scrollbar_animate_speed</em></td>
+    <td style="text-align: right; padding-right: 10px;"><em>300</em></td>
+    <td style="padding-left: 10px;">the speed (in milliseconds) of the scrollbar animation</td>
+  </tr>
+  <tr>
     <td style="text-align: right; padding-right: 10px;"><em>highlight_class</em></td>
     <td style="text-align: right; padding-right: 10px;"><em>"highlight"</em></td>
     <td style="padding-left: 10px;">the class to be added to each traversal element</td>
