@@ -44,11 +44,11 @@ This will do the following:
 
 ## Demos
 
-1. [DIV example][example_1]
-2. [TABLE example][example_2]
-3. [TABLE example (using more options)][example_3]
-4. [TABLE example (fire key events using buttons)][example_4]
-5. [TABLE example (large number of elements)][example_5]
+1. [The Default][example_1]
+2. [Skipping and No Looping][example_2]
+3. [Keys and Action][example_3]
+4. [Buttons][example_4]
+5. [Performance][example_5]
 
 ## Options
 
