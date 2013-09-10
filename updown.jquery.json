@@ -1,0 +1,28 @@
+{
+  "name": "updown",
+  "title": "UpDown.js",
+  "description": "UpDown.js provides a flexible way to traverse through containers and their child elements with either keyboard commands or custom events.",
+  "version": "0.0.1",
+  "homepage": "http://adelegard.github.io/updown.js/",
+  "demo": "https://rawgithub.com/adelegard/updown.js/master/examples/example_1.html",
+  "docs": "https://github.com/adelegard/updown.js",
+  "author": {
+    "name": "Alex Delegard",
+    "email": "alex.delegard@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adelegard/updown.js.git"
+  },
+  "bugs": "https://github.com/adelegard/updown.js/issues",
+  "dependencies": {
+    "jquery": ">=1.4.2"
+  },
+  "keywords": ["traverse","up","down","skip","dom","animate","animation","jquery"],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ]
+}
