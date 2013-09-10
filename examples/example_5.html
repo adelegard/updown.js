@@ -14,10 +14,10 @@
     <script>
       $(function() {
         for (var i=0; i < 1000; i++) {
-          $('#content').append($('.some_table').first().clone());
+          $('#content').append($('.element_to_clone').first().clone());
         }
 
-        $('.some_table').traverse('tbody tr', {
+        $('.some_container').traverse('div', {
           skip_selector: '.skip'
         });
       });
@@ -25,46 +25,48 @@
   </head>
   <body>
     <div id="content">
-      <div>An example of traversing 1000 table (4000 rows) with the following options</div>
-      <ul>
-        <li>skip_selector: '.skip'</li>
-      </ul>
-      <table class="some_table">
-        <thead>
-          <tr>
-            <th>Column1</th>
-            <th>Column2</th>
-            <th>Column3</th>
-            <th>Column4</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>data1</td>
-            <td>data1</td>
-            <td>data1</td>
-            <td>data1</td>
-          </tr>
-          <tr class="skip">
-            <td>data2</td>
-            <td>data2</td>
-            <td>data2</td>
-            <td>data2</td>
-          </tr>
-          <tr class="skip">
-            <td>data3</td>
-            <td>data3</td>
-            <td>data3</td>
-            <td>data3</td>
-          </tr>
-          <tr>
-            <td>data4</td>
-            <td>data4</td>
-            <td>data4</td>
-            <td>data4</td>
-          </tr>
-        </tbody>
-      </table>
+		<div id="side_panel">
+	      <div>A performance example of traversing 4000 elements with the following options</div>
+	      <ul>
+	        <li>skip_selector: '.skip'</li>
+	      </ul>
+		</div>	
+		<div class="element_to_clone">
+			<div class="some_container">
+				<div class="highlight"></div>
+				<div></div>
+				<div class="skip"></div>
+				<div></div>
+			</div>
+			<div class="another_container">
+				<div class="some_container">
+					<div class="skip"></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div class="some_container">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="skip"></div>
+			</div>
+			<div class="another_container">
+				<div class="some_container">
+					<div class="skip"></div>
+					<div></div>
+					<div></div>
+					<div class="skip"></div>
+				</div>
+			</div>
+			<div class="some_container">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div class="skip"></div>
+			</div>
+		</div>
     </div>
   </body>
 </html>

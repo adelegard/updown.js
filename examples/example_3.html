@@ -1,153 +1,86 @@
 <!DOCTYPE>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>JQuery Traverse plugin example 3</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>JQuery Traverse plugin example 3</title>
 	<!-- rawgithub.com sources -->
-    <script src="https://rawgithub.com/adelegard/jquery-traverse/master/src/jquery-1.8.3.min.js" type="text/javascript"></script>
-    <script src="https://rawgithub.com/adelegard/jquery-traverse/master/src/jquery.traverse.js" type="text/javascript"></script>
-    <link href='https://rawgithub.com/adelegard/jquery-traverse/master/examples/example.css' rel='stylesheet' type='text/css'>
+	<script src="https://rawgithub.com/adelegard/jquery-traverse/master/src/jquery-1.8.3.min.js" type="text/javascript"></script>
+	<script src="https://rawgithub.com/adelegard/jquery-traverse/master/src/jquery.traverse.js" type="text/javascript"></script>
+	<link href='https://rawgithub.com/adelegard/jquery-traverse/master/examples/example.css' rel='stylesheet' type='text/css'>
 	<!-- local sources -->
-    <!-- <script src="../src/jquery-1.8.3.min.js" type="text/javascript"></script>
-    <script src="../src/jquery.traverse.js" type="text/javascript"></script>
-    <link href='example.css' rel='stylesheet' type='text/css'> -->
-    <script>
-      $(function() {
-        $('.some_table').traverse('tbody tr', {
-          skip_selector: '.skip',
-          loop: false,
-          move_scrollbar: false,
-          key_action: 18, // alt
-          key_down: [74, 40], // j, down arrow
-          key_up: [75, 38], // k, up arrow
-          on_action_override: function(e) { // the keypress event is passed in from the plugin
-            $('.last_action').text($('.highlight td:first').text() + ' (via key ' + e.keyCode + ')');
-          }
-        });
-      });
-    </script>
+	<!-- <script src="../src/jquery-1.8.3.min.js" type="text/javascript"></script>
+	<script src="../src/jquery.traverse.js" type="text/javascript"></script>
+	<link href='example.css' rel='stylesheet' type='text/css'> -->
+	<script>
+	  $(function() {
+		$('.some_container').traverse('div', {
+		  skip_selector: '.skip',
+		  loop: false,
+		  move_scrollbar: false,
+		  key_action: 18, // alt
+		  key_down: [74, 40], // j, down arrow
+		  key_up: [75, 38], // k, up arrow
+		  on_action_override: function(e) { // the keypress event is passed in from the plugin
+			$('.last_action').text($('.highlight').text() + ' (via key ' + e.keyCode + ')');
+		  }
+		});
+		$('.some_container').each(function(index, container) {
+			$(this).find("div").each(function(inner_index, inner_container) {
+				$(this).text("Outer container: " + index + " inner: " + inner_index);
+			});
+		});
+	  });
+	</script>
   </head>
   <body>
-    <div id="content">
-      <div>An example of multiple tables with the following options</div>
-      <ul>
-        <li>skip_selector: '.skip'</li>
-        <li>loop: false</li>
-        <li>move_scrollbar: false</li>
-        <li>key_action: 18 (alt)</li>
-        <li>key_down: [74, 40] (j and down arrow)</li>
-        <li>key_up: [75, 38] (k and up arrow)</li>
-        <li>on_action_override function with passed in event</li>
-      </ul>
-      <table class="some_table">
-        <thead>
-          <tr>
-            <th>Column1</th>
-            <th>Column2</th>
-            <th>Column3</th>
-            <th>Column4</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>data1</td>
-            <td>data1</td>
-            <td>data1</td>
-            <td>data1</td>
-          </tr>
-          <tr class="skip">
-            <td>data2</td>
-            <td>data2</td>
-            <td>data2</td>
-            <td>data2</td>
-          </tr>
-          <tr class="skip">
-            <td>data3</td>
-            <td>data3</td>
-            <td>data3</td>
-            <td>data3</td>
-          </tr>
-          <tr>
-            <td>data4</td>
-            <td>data4</td>
-            <td>data4</td>
-            <td>data4</td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="some_table">
-        <thead>
-          <tr>
-            <th>Column1</th>
-            <th>Column2</th>
-            <th>Column3</th>
-            <th>Column4</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>data5</td>
-            <td>data5</td>
-            <td>data5</td>
-            <td>data5</td>
-          </tr>
-          <tr>
-            <td>data6</td>
-            <td>data6</td>
-            <td>data6</td>
-            <td>data6</td>
-          </tr>
-          <tr>
-            <td>data7</td>
-            <td>data7</td>
-            <td>data7</td>
-            <td>data7</td>
-          </tr>
-          <tr class="skip">
-            <td>data8</td>
-            <td>data8</td>
-            <td>data8</td>
-            <td>data8</td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="some_table">
-        <thead>
-          <tr>
-            <th>Column1</th>
-            <th>Column2</th>
-            <th>Column3</th>
-            <th>Column4</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>data9</td>
-            <td>data9</td>
-            <td>data9</td>
-            <td>data9</td>
-          </tr>
-          <tr>
-            <td>data10</td>
-            <td>data10</td>
-            <td>data10</td>
-            <td>data10</td>
-          </tr>
-          <tr>
-            <td>data11</td>
-            <td>data11</td>
-            <td>data11</td>
-            <td>data11</td>
-          </tr>
-          <tr>
-            <td>data12</td>
-            <td>data12</td>
-            <td>data12</td>
-            <td>data12</td>
-          </tr>
-        </tbody>
-      </table>
-      <span>Last Action: <span class="last_action"></span></span>
-    </div>
+	<div id="content">
+		<div id="side_panel">
+		  <div>An example of multiple tables with the following options</div>
+		  <ul>
+			<li>skip_selector: '.skip'</li>
+			<li>loop: false</li>
+			<li>move_scrollbar: false</li>
+			<li>key_action: 18 (alt)</li>
+			<li>key_down: [74, 40] (j and down arrow)</li>
+			<li>key_up: [75, 38] (k and up arrow)</li>
+			<li>on_action_override function with passed in event</li>
+		  </ul>
+			<div class="action_container">Last Action: <span class="last_action"></span></div>
+		</div>
+		<div class="some_container">
+			<div></div>
+			<div></div>
+			<div class="skip"></div>
+			<div></div>
+		</div>
+		<div class="another_container">
+			<div class="some_container">
+				<div class="skip"></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<div class="some_container">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div class="skip"></div>
+		</div>
+		<div class="another_container">
+			<div class="some_container">
+				<div class="skip"></div>
+				<div></div>
+				<div></div>
+				<div class="skip"></div>
+			</div>
+		</div>
+		<div class="some_container">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div class="skip"></div>
+		</div>
+	</div>
   </body>
 </html>
