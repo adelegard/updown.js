@@ -41,7 +41,8 @@ li {
 }
 
 /* shared styles */
-.highlight {
+.some_container .highlight,
+.some_table tbody tr.highlight {
   background-color: orange;
 }
 
