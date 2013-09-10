@@ -52,6 +52,9 @@ button:hover {
 #top_bar a.next {
 	float: right;
 }
+#top_bar a.hidden {
+	visibility: hidden;
+}
 #top_bar .title {
 	text-align: center;
 	margin: 0;
