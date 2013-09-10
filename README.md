@@ -244,7 +244,7 @@ Once you've made your great commits:
 
 ## Copyright
 
-Copyright © 2012 Alex Delegard. See LICENSE.txt for
+Copyright © 2013 Alex Delegard. See LICENSE.txt for
 further details.
 
 [forking]: http://help.github.com/forking/
