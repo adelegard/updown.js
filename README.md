@@ -249,9 +249,9 @@ further details.
 
 [forking]: http://help.github.com/forking/
 [pull requests]: http://help.github.com/pull-requests/
-[example_1]: http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_1.html
-[example_2]: http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_2.html
-[example_3]: http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_3.html
-[example_4]: http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_4.html
-[example_5]: http://htmlpreview.github.com/?https://github.com/adelegard/jquery-traverse/blob/master/examples/example_5.html
+[example_1]: https://rawgithub.com/adelegard/jquery-traverse/master/examples/example_1.html
+[example_2]: https://rawgithub.com/adelegard/jquery-traverse/master/examples/example_2.html
+[example_3]: https://rawgithub.com/adelegard/jquery-traverse/master/examples/example_3.html
+[example_4]: https://rawgithub.com/adelegard/jquery-traverse/master/examples/example_4.html
+[example_5]: https://rawgithub.com/adelegard/jquery-traverse/master/examples/example_5.html
 
