@@ -97,6 +97,11 @@ This will do the following:
     <td style="padding-left: 10px;">whether or not the scrollbar should be moved to keep the highlighted element visible</td>
   </tr>
   <tr>
+    <td style="text-align: right; padding-right: 10px;"><em>scrollbar_move_additional_px</em></td>
+    <td style="text-align: right; padding-right: 10px;"><em>200</em></td>
+    <td style="padding-left: 10px;">how many additional pixels we should move when keeping the 'highlight_class' visible (in addition to height of 'highlight_class' element)</td>
+  </tr>
+  <tr>
     <td style="text-align: right; padding-right: 10px;"><em>scrollbar_animate_speed</em></td>
     <td style="text-align: right; padding-right: 10px;"><em>300</em></td>
     <td style="padding-left: 10px;">the speed (in milliseconds) of the scrollbar animation</td>
