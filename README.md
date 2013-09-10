@@ -50,8 +50,6 @@ This will do the following:
 4. [TABLE example (fire key events using buttons)][example_4]
 5. [TABLE example (large number of elements)][example_5]
 
-... more to come.
-
 ## Options
 
 <table style="width: 100%; border: 1px solid #000000; margin-bottom: 25px;" border="1" cellspacing="0" cellpadding="3">
