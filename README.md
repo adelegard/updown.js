@@ -6,15 +6,6 @@ The jquery-traverse plugin will give you a flexible way to traverse through cont
 
 * jQuery 1.4.2+
 
-## Installation
-
-Add the following to your HTML head:
-
-``` html
-    <script src="jquery.js" type="text/javascript"></script>
-    <script src="jquery.traverse.js" type="text/javascript"></script>
-```
-
 ## Usage
 
 Basic use case:
