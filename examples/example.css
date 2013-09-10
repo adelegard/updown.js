@@ -24,18 +24,13 @@ li {
   background-color: #ddd;
   border: 1px solid #777;
   border-radius: 5px;
-  -webkit-transition: background-color 200ms ease;
-  -moz-transition: background-color 200ms ease;
-  -o-transition: background-color 200ms ease;
-  transition: background-color 200ms ease;
-}
-.some_container div.highlight {
-  background-color: orange;
 }
 
 /* table styles */
 .some_table {
-  border: 1px solid #000;
+  width: 100%;
+  border: 1px solid #666;
+  border-radius: 3px;
   margin: 20px 0px;
 }
 .some_table tbody tr {
@@ -44,6 +39,16 @@ li {
 .some_table tbody tr.skip {
   background-color: #aaa;
 }
-.some_table tbody tr.highlight {
-  background-color: red;
+
+/* shared styles */
+.highlight {
+  background-color: orange;
+}
+
+.some_container div,
+.some_table tbody tr {
+  -webkit-transition: background-color 200ms ease;
+  -moz-transition: background-color 200ms ease;
+  -o-transition: background-color 200ms ease;
+  transition: background-color 200ms ease;
 }
