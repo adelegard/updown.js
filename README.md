@@ -1,6 +1,6 @@
-# UpDownJs
+# UpDown.js
 
-UpDownJs is a jquery plugin will give you a flexible way to traverse through containers and their child elements with either keyboard commands or custom events.
+UpDown.js is a jquery plugin will give you a flexible way to traverse through containers and their child elements with either keyboard commands or custom events.
 
 ## Requirements
 
@@ -226,11 +226,11 @@ This will do the following:
 
 That's it! Please note, however, that currently only one usage of the plugin is supported on the page at any given time.
 
-## Contributing to UpDownJs
+## Contributing to UpDown.js
 
 Once you've made your great commits:
 
-1. [Fork][forking] UpDownJs
+1. [Fork][forking] UpDown.js
 2. Create a feature branch
 3. Write your code (and tests please)
 4. Push to your branch's origin
