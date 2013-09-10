@@ -1,5 +1,5 @@
 /*
- * jQuery Traverse jQuery plugin for traversing elements within containers with the keyboard
+ * jQuery UpDownJs plugin for traversing elements within containers with the keyboard
  *
  * Copyright (c) 2012 Alex Delegard
  *
@@ -7,22 +7,22 @@
  *   http://www.opensource.org/licenses/mit-license.php
  *
  * Project home:
- *  https://github.com/adelegard/jquery-traverse
+ *  https://github.com/adelegard/updown.js
  *
  */
 
 ;(function($)
 {
-    $.fn.traverse = function (traverse, options)
+    $.fn.updown = function (child_selector, options)
     {
         // if there are no elements, then just return
-        if (this.length === 0 || typeof traverse === 'undefined' || traverse === null) return;
-        var opts = $.extend({}, $.fn.traverse.defaults, options),
+        if (this.length === 0 || typeof child_selector === 'undefined' || child_selector === null) return;
+        var opts = $.extend({}, $.fn.updown.defaults, options),
             $master = this,
 
             container_index = 0,
             container_selector = $master.selector,
-            traverse_selector = (typeof opts.skip_selector !== 'undefined' ? (traverse + ':not(' + opts.skip_selector + ')') : traverse),
+            traverse_selector = (typeof opts.skip_selector !== 'undefined' ? (child_selector + ':not(' + opts.skip_selector + ')') : child_selector),
             container_traverse_selector = container_selector + ' ' + traverse_selector,
             cur_highlighted_selector = container_traverse_selector + '.' + opts.highlight_class,
 
@@ -250,7 +250,7 @@
         return this;
     };
     
-    $.fn.traverse.defaults = {
+    $.fn.updown.defaults = {
         jump_between: true, //jump between containers at traverse boundaries
         loop: true, // loop to the beginning/end of container boundaries
         skip_selector: null, // skip over these selectors when traversing
