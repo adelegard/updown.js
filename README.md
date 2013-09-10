@@ -1,6 +1,6 @@
 # UpDown.js
 
-UpDown.js is a jquery plugin will give you a flexible way to traverse through containers and their child elements with either keyboard commands or custom events.
+UpDown.js is a jquery plugin that provides a flexible way to traverse through containers and their child elements with either keyboard commands or custom events.
 
 ## Requirements
 
