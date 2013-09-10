@@ -177,24 +177,24 @@
 
             // move the scroll bar so our highlight_class is visible
             if (opts.move_scrollbar && (_is_key(opts.key_down, e.which) || _is_key(opts.key_up, e.which))) {
-                _keep_element_in_view(cur_highlighted_selector);
+                _keep_element_in_view(cur_highlighted_selector, opts);
             }
         });
 
-        function _keep_element_in_view(element) {
+        function _keep_element_in_view(element, opts) {
             var the_traverse_element = $(element);
             if (_in_view(the_traverse_element, 0)) return false;
             var offset = the_traverse_element.offset(); // Contains .top and .left
             var window_height = window.innerHeight;
+			var move_px = the_traverse_element.outerHeight(true) + opts.scrollbar_move_additional_px;
 
             if (_below_view(the_traverse_element, 0)) {
-                offset.top = (offset.top - (window_height - (the_traverse_element.height() * 3)));
-                $('html, body').scrollTop(offset.top);
+                offset.top = (offset.top - (window_height - move_px));
             }
             else if (_above_view(the_traverse_element, 0)) {
-                offset.top = (offset.top - (the_traverse_element.height() * 3));
-                $('html, body').scrollTop(offset.top);
+                offset.top = (offset.top - move_px);
             }
+			$('html, body').stop().animate({scrollTop: offset.top}, opts.scrollbar_animate_speed);
             return false;
         }
 
@@ -204,7 +204,7 @@
         }
         function _above_view(element, threshold) {
             var top = $(window).scrollTop();
-            return top >= element.offset().top + element.height() - threshold;
+            return top >= element.offset().top + element.outerHeight(true) - threshold;
         }
         function _in_view(element, threshold) {
             return !_below_view(element, threshold) && !_above_view(element, threshold);
@@ -256,6 +256,8 @@
         skip_selector: null, // skip over these selectors when traversing
         table_row_helper: false, // accounts for an inconsistently placed header row - designed to be used with a selector of 'tr'
         move_scrollbar: true, //move the scroll bar to keep the 'highlight_class' visible
+		scrollbar_move_additional_px: 200, //how many additional pixels we should move when keeping the 'highlight_class' visible (in addition to height of 'highlight_class' element)
+		scrollbar_animate_speed: 300,
         highlight_class: 'highlight',
         action_window_location_href: true, // browser redirect to found anchor's HREF on 'key_action'
         action_selector: ' > td > a',

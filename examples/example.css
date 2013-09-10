@@ -1,5 +1,6 @@
 body {
 	margin: 0;
+	font-family: monospace;
 }
 
 li {
@@ -60,7 +61,7 @@ button:hover {
   width: 400px;
   margin: 0 auto;
   text-align: left;
-	padding-top: 80px;
+	padding: 80px 0;
 }
 #side_panel {
   position: fixed;
@@ -74,12 +75,12 @@ button:hover {
 /* container styles */
 .some_container {
   padding: 10px 10px 0;
-  border: 3px solid blue;
+  border: 2px solid #ccc;
   border-radius: 5px;
 }
 .another_container {
   padding: 10px;
-  border: 2px solid red;
+  border: 2px solid #aaa;
   margin: 10px 0px;
   border-radius: 5px;
 }
@@ -107,4 +108,30 @@ button:hover {
 	padding: 10px;
 	margin-top: 10px;
 }
+.action_container.updated {
+  -webkit-animation: highlight 1s; /* Safari 4+ */
+  -moz-animation:    highlight 1s; /* Fx 5+ */
+  -o-animation:      highlight 1s; /* Opera 12+ */
+  animation:         highlight 1s; /* IE 10+ */
+}
 
+@-webkit-keyframes highlight {
+  0%   { background-color: orange; }
+  100% { background-color: none; }
+}
+@-moz-keyframes highlight {
+  0%   { background-color: orange; }
+  100% { background-color: none; }
+}
+@-o-keyframes highlight {
+  0%   { background-color: orange; }
+  100% { background-color: none; }
+}
+@keyframes highlight {
+  0%   { background-color: orange; }
+  100% { background-color: none; }
+}
+
+.element_to_clone {
+	margin-bottom: 10px;
+}
