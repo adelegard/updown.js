@@ -1,6 +1,6 @@
-# jquery-traverse
+# UpDownJs
 
-The jquery-traverse plugin will give you a flexible way to traverse through containers and their child elements with either keyboard commands or custom events.
+UpDownJs is a jquery plugin will give you a flexible way to traverse through containers and their child elements with either keyboard commands or custom events.
 
 ## Requirements
 
@@ -10,7 +10,7 @@ The jquery-traverse plugin will give you a flexible way to traverse through cont
 
 Basic use case:
 ``` javascript
-    $('.some_table').traverse('tbody tr');
+    $('.some_table').updown('tbody tr');
 ```
 This will do the following:
 
@@ -19,7 +19,7 @@ This will do the following:
 
 Advanced use case:
 ``` javascript
-    $('.some_table').traverse('tbody tr', {
+    $('.some_table').updown('tbody tr', {
         skip_selector: '.skip',
         loop: false,
         move_scrollbar: false,
@@ -226,11 +226,11 @@ This will do the following:
 
 That's it! Please note, however, that currently only one usage of the plugin is supported on the page at any given time.
 
-## Contributing to jQuery-traverse
+## Contributing to UpDownJs
 
 Once you've made your great commits:
 
-1. [Fork][forking] jQuery-traverse
+1. [Fork][forking] UpDownJs
 2. Create a feature branch
 3. Write your code (and tests please)
 4. Push to your branch's origin
@@ -239,8 +239,8 @@ Once you've made your great commits:
 
 ## Links
 
-* Code: `git clone git://github.com/adelegard/jquery-traverse.git`
-* Bugs: <http://github.com/adelegard/jquery-traverse/issues>
+* Code: `git clone git://github.com/adelegard/updown.js.git`
+* Bugs: <http://github.com/adelegard/updown.js/issues>
 
 ## Copyright
 
@@ -249,9 +249,9 @@ further details.
 
 [forking]: http://help.github.com/forking/
 [pull requests]: http://help.github.com/pull-requests/
-[example_1]: https://rawgithub.com/adelegard/jquery-traverse/master/examples/example_1.html
-[example_2]: https://rawgithub.com/adelegard/jquery-traverse/master/examples/example_2.html
-[example_3]: https://rawgithub.com/adelegard/jquery-traverse/master/examples/example_3.html
-[example_4]: https://rawgithub.com/adelegard/jquery-traverse/master/examples/example_4.html
-[example_5]: https://rawgithub.com/adelegard/jquery-traverse/master/examples/example_5.html
+[example_1]: https://rawgithub.com/adelegard/updown.js/master/examples/example_1.html
+[example_2]: https://rawgithub.com/adelegard/updown.js/master/examples/example_2.html
+[example_3]: https://rawgithub.com/adelegard/updown.js/master/examples/example_3.html
+[example_4]: https://rawgithub.com/adelegard/updown.js/master/examples/example_4.html
+[example_5]: https://rawgithub.com/adelegard/updown.js/master/examples/example_5.html
 
